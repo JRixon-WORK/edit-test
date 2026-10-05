@@ -1,0 +1,11 @@
+---
+layout: base.njk
+title: Reflections
+description: All reflections
+permalink: /reflections/
+---
+<ul>
+{%- for r in collections.reflection %}
+  <li><a href="{{ r.url }}">{{ r.data.title }}</a></li>
+{%- endfor %}
+</ul>

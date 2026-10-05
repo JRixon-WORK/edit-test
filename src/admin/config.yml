@@ -1,0 +1,49 @@
+# ---------------------------------------------------------------------------
+# BACKEND: DecapBridge supplies these lines when you create the site there.
+# Paste what DecapBridge gives you in place of this whole block.
+# Do NOT use `name: git-gateway` - Netlify Identity / Git Gateway is DEPRECATED
+# and is the reason the old free route no longer works.
+# ---------------------------------------------------------------------------
+backend:
+  name: git-gateway        # <-- DecapBridge replaces this
+  repo: REPLACE-WITH/your-repo
+  branch: main
+
+publish_mode: simple
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home page"
+        file: "src/index.md"
+        fields:
+          - { name: title, label: "Page title", widget: string }
+          - { name: description, label: "Search description", widget: string }
+          - { name: body, label: "Page content", widget: markdown }
+          - { name: layout, label: "Layout", widget: hidden, default: "base.njk" }
+      - name: "about"
+        label: "About page"
+        file: "src/about.md"
+        fields:
+          - { name: title, label: "Page title", widget: string }
+          - { name: description, label: "Search description", widget: string }
+          - { name: body, label: "Page content", widget: markdown }
+          - { name: layout, label: "Layout", widget: hidden, default: "base.njk" }
+
+  - name: "reflections"
+    label: "Reflections"
+    folder: "src/reflections"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { name: title, label: "Title", widget: string }
+      - { name: description, label: "Search description", widget: string }
+      - { name: date, label: "Date", widget: datetime }
+      - { name: body, label: "Reflection", widget: markdown }
+      - { name: layout, label: "Layout", widget: hidden, default: "base.njk" }
+      - { name: tags, label: "Tags", widget: hidden, default: "reflection" }

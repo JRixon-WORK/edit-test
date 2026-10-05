@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<style>
+body{font-family:system-ui,sans-serif;max-width:46rem;margin:0 auto;padding:2rem 1rem;line-height:1.6;color:#1a1a1a}
+nav a{margin-right:1rem}
+</style>
+</head>
+<body>
+<nav><a href="/">Home</a><a href="/about/">About</a><a href="/reflections/">Reflections</a></nav>
+<h1>{{ title }}</h1>
+{{ content | safe }}
+</body>
+</html>
