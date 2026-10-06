@@ -1,7 +1,6 @@
 ---
+title: Welcome. Let's get rich
+description: Test home page. I know right
 layout: base.njk
-title: Welcome
-description: Test home page
 ---
-
-This is the home page. Change this sentence in the editor and it should appear here.
+This is the home page. Change this sentence in the editor and it should appear here. Greeting my friend
